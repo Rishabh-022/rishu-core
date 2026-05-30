@@ -84,5 +84,195 @@ Built with Python, Groq LLM, and a modular design – easy to extend with new sk
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/rishu-core.git
+git clone https://github.com/Rishabh-022/rishu-core
 cd rishu-core
+```
+### 2. Create Virtual Environment & Install Dependencies
+```bash
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+Generate requirements.txt (if not already present
+```bash
+pip freeze > requirements.txt
+```
+
+### 3. Set Up Environment Variables
+Create a .env file in the project root:
+```
+ini
+GROQ_API_KEY=your_groq_api_key_here
+EMAIL_ADDRESS=your_email@gmail.com      # optional
+EMAIL_PASSWORD=your_app_password        # optional
+Get a free Groq API key at console.groq.com.
+
+For email, use a Gmail App Password.
+
+```
+
+### 4. Run the Assistant
+```bash
+python phase8.py
+
+
+---
+
+## **Phase 5: Usage**
+```markdown
+### 🎮 How to Use 
+
+1. Say **"Hey Rishu"** to wake the assistant.
+2. It will reply **"Yes?"** and enter active mode.
+3. Speak any command (see list below).
+4. After execution, it asks **"What else?"** – you can keep talking.
+5. To exit active mode say: *"sleep"*, *"stop"*, *"go to sleep"*.
+6. To shut down completely: *"shutdown rishu"*.
+
+**Example conversation:**
+
+Hey Rishu
+→ Yes?
+Open notepad
+→ Opening notepad
+Type in notepad Hello World
+→ Typing text
+What time is it?
+→ It's 3:15 PM
+Thank you
+→ (goes back to standby)
+```
+
+## 📜 Command Reference (50+ voice commands)
+
+### 🖥️ System
+| Command | Action |
+|---------|--------|
+| *System info* | CPU, RAM, Disk usage |
+| *Check battery* | Battery percentage & charging status |
+| *Set volume to 50* | Change system volume (0–100) |
+| *Lock PC* | Lock Windows workstation |
+| *Take a screenshot* | Save & open screenshot |
+| *Take a photo* | Capture webcam image |
+| *Read the screen* | Read visible text aloud |
+| *Find and click Submit* | Locate text on screen and click |
+
+### 📁 Files & Folders
+| Command | Action |
+|---------|--------|
+| *Create folder projects* | Create a new folder |
+| *Delete folder old* | Delete a folder |
+| *Open file resume.pdf* | Open any file |
+| *Search files report* | Search Downloads for matching files |
+
+### 🌐 Apps & Web
+| Command | Action |
+|---------|--------|
+| *Open notepad* | Launch any app |
+| *Open YouTube* | Open website |
+| *Open LeetCode* | Open competitive programming sites |
+| *Open CodeChef* | (via built‑in shortcuts) |
+
+### 📝 Typing & Clipboard
+| Command | Action |
+|---------|--------|
+| *Type in notepad Hello* | Type text into an app |
+| *Copy that* | Ctrl+C |
+| *Paste this* | Paste from clipboard |
+| *Read clipboard* | Speak clipboard content |
+
+### 🎵 Media
+| Command | Action |
+|---------|--------|
+| *Play music Shape of You* | Search & play on Spotify |
+| *Pause music* | Pause/play |
+| *Next track* / *Previous track* | Skip tracks |
+| *YouTube search Python* | Search YouTube |
+| *YouTube play pause* | Toggle play/pause |
+| *YouTube fullscreen* | Enter/exit fullscreen |
+
+### 💬 Communication
+| Command | Action |
+|---------|--------|
+| *Send email to x@y.com subject Hi body Hello* | Send email via Gmail |
+| *Send WhatsApp to John hello* | Send message via WhatsApp Web |
+| *Get weather in London* | Current weather |
+
+### 💻 Developer
+| Command | Action |
+|---------|--------|
+| *Git status* | Show working tree status |
+| *Git commit Updated code* | Commit changes |
+| *Git push* / *Git pull* | Push/pull to remote |
+| *Save code fibonacci def fib(n):* | Save snippet to DB & file |
+| *Get code fibonacci* | Retrieve snippet (copied to clipboard) |
+| *Review code phase8.py* | AI code review |
+| *Run tests* | Execute pytest in current directory |
+
+### 📅 Productivity
+| Command | Action |
+|---------|--------|
+| *Create note shopping milk, eggs* | Save text note |
+| *Set reminder 2026-05-20 14:30 Call John* | Schedule reminder |
+| *Join meeting zoom.us/j/123* | Open meeting link |
+| *Take notes* | Start voice note‑taking (say *stop notes* to finish) |
+| *Read PDF report.pdf* | Read first 3 pages aloud |
+
+### 🎥 Screen Recording
+| Command | Action |
+|---------|--------|
+| *Start recording* | Begin ffmpeg desktop capture |
+| *Stop recording* | Stop & save recording |
+
+### ⚙️ Process & Browser
+| Command | Action |
+|---------|--------|
+| *Kill process chrome* | Force‑close a program |
+| *New tab* / *Close tab* / *Refresh page* | Browser control |
+| *Scroll down* / *Scroll up* | Scroll page |
+| *Click button Login* | Find & click element by text |
+| *Fill form John Doe* | Type into active field |
+
+
+## 📁 Project Structure
+```text
+rishu-core/
+│
+├── phase8.py             # Main assistant (all features)
+├── requirements.txt      # Python dependencies
+├── .env                  # Environment variables (ignored by git)
+├── .gitignore            # Git ignore rules
+├── README.md
+│
+├── venv/                 # Virtual environment (ignored)
+│
+└── Documents/Rishu_Notes/ # Auto-created storage
+    ├── memory.json       # Conversation history
+    ├── rishu_core.db     # SQLite database (reminders, code, notes)
+    ├── Code_Snippets/    # Saved code files
+    ├── Meeting_Notes/    # Meeting note files
+    └── *.txt             # Text notes
+
+```
+## 🔧 Troubleshooting
+
+| Problem | Solution |
+|---------|----------|
+| **Microphone not working** | Set default input device in Windows Sound settings |
+| **Silent crash after "Yes?"** | Increase `time.sleep()` in speaker & mic functions |
+| **Tesseract not found** | Install Tesseract OCR to `C:\Program Files\Tesseract-OCR\` |
+| **Email fails** | Use Gmail App Password, not your real password |
+| **WhatsApp Web doesn't load** | Ensure you're logged in and browser is Chrome/Edge |
+| **ModuleNotFoundError** | Activate venv: `.\venv\Scripts\activate` then reinstall dependencies |
+
+## 🙏 Credits
+
+- **Groq** for the ultra‑fast LLM API (Llama‑3 70B, Whisper)
+- **UB Mannheim** for Windows Tesseract builds
+- **PyAutoGUI**, **OpenCV**, **pyttsx3** and all open‑source libraries
+
+---
+
+⭐ **If you like this project, give it a star on GitHub!**  
+Happy voice‑controlling your PC! 🚀
