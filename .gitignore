@@ -1,0 +1,19 @@
+# Environments
+venv/
+env/
+__pycache__/
+
+# Secrets
+.env
+
+# Audio and Image Files
+*.wav
+*.jpg
+*.png
+screenshot_*.png
+photo_*.jpg
+
+# Memory Files
+memory.json
+
+secret.txt
