@@ -116,11 +116,12 @@ For email, use a Gmail App Password.
 ```bash
 python phase8.py
 
+```
 
 ---
 
 ## **Phase 5: Usage**
-```markdown
+
 ### 🎮 How to Use 
 
 1. Say **"Hey Rishu"** to wake the assistant.
@@ -129,6 +130,9 @@ python phase8.py
 4. After execution, it asks **"What else?"** – you can keep talking.
 5. To exit active mode say: *"sleep"*, *"stop"*, *"go to sleep"*.
 6. To shut down completely: *"shutdown rishu"*.
+
+
+
 
 **Example conversation:**
 
@@ -142,7 +146,8 @@ What time is it?
 → It's 3:15 PM
 Thank you
 → (goes back to standby)
-```
+
+
 
 ## 📜 Command Reference (50+ voice commands)
 
